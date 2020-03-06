@@ -167,6 +167,13 @@ UploadImg.prototype = {
             const uploadImgServerArr = uploadImgServer.split('#')
             uploadImgServer = uploadImgServerArr[0]
             const uploadImgServerHash = uploadImgServerArr[1] || ''
+
+            // ------------------------------------------
+            // 把 file 放到 formdata 的最后一个
+            const _file = formdata.get(uploadFileName)
+            formdata.delete(uploadFileName)
+            // ------------------------------------------
+            
             objForEach(uploadImgParams, (key, val) => {
                 // 因使用者反应，自定义参数不能默认 encode ，由 v3.1.1 版本开始注释掉
                 // val = encodeURIComponent(val)
@@ -184,6 +191,11 @@ UploadImg.prototype = {
                 // 第二，将参数添加到 formdata 中
                 formdata.append(key, val)
             })
+
+            // ------------------------------------------
+            formdata.append(uploadFileName, _file)
+            // ------------------------------------------
+
             if (uploadImgServerHash) {
                 uploadImgServer += '#' + uploadImgServerHash
             }
