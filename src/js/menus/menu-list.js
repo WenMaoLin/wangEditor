@@ -65,5 +65,11 @@ MenuConstructors.video = Video
 import Image from './img/index.js'
 MenuConstructors.image = Image
 
+import Mixiu from './mixiu/index.js'
+MenuConstructors.mixiu = Mixiu
+
+import Yi35 from './yi35/index.js'
+MenuConstructors.yi35 = Yi35
+
 // 吐出所有菜单集合
 export default MenuConstructors

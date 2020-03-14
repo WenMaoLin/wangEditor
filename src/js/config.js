@@ -25,7 +25,9 @@ const config = {
         'video',
         'code',
         'undo',
-        'redo'
+        'redo',
+        'mixiu',
+        'yi35'
     ],
 
     fontNames: [
@@ -143,7 +145,7 @@ const config = {
     },
 
     // 粘贴过滤样式，默认开启
-    pasteFilterStyle: true,
+    pasteFilterStyle: false,
 
     // 粘贴内容时，忽略图片。默认关闭
     pasteIgnoreImg: false,
